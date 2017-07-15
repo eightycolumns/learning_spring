@@ -9,8 +9,8 @@ public class Application {
       "application.xml"
     );
 
-    Instrument oboe = ac.getBean("oboeFoo", Oboe.class);
-    Instrument piano = ac.getBean("pianoBar", Piano.class);
+    Instrument oboe = ac.getBean("foo", Oboe.class);
+    Instrument piano = ac.getBean("bar", Piano.class);
 
     System.out.println("Behold the " + oboe.play() + " of the oboe!");
     System.out.println("Behold the " + piano.play() + " of the piano!");
