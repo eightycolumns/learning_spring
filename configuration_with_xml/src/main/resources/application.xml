@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="oboe" name="foo" class="com.eightycolumns.application.Oboe">
+  <bean id="oboe" name="foo,oboeFoo" class="com.eightycolumns.application.Oboe">
   </bean>
 
-  <bean id="piano" name="bar" class="com.eightycolumns.application.Piano">
+  <bean id="piano" name="bar,pianoBar" class="com.eightycolumns.application.Piano">
   </bean>
 </beans>
