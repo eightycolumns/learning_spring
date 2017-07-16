@@ -20,4 +20,12 @@
 
   <bean id="piano" factory-bean="pianoMaker" factory-method="makeInstrument">
   </bean>
+
+  <bean id="oboist" class="com.eightycolumns.application.Musician">
+    <constructor-arg ref="oboe"/>
+  </bean>
+
+  <bean id="pianist" class="com.eightycolumns.application.Musician">
+    <constructor-arg ref="piano"/>
+  </bean>
 </beans>

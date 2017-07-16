@@ -9,22 +9,36 @@ public class Application {
       "application.xml"
     );
 
-    String instr;
-
     InstrumentMaker oboeMaker = ac.getBean("oboeMaker", OboeMaker.class);
+    Musician oboist = ac.getBean("oboist", Musician.class);
     Instrument oboe = ac.getBean("oboe", Oboe.class);
 
+    System.out.println(
+      "The oboe-maker makes an " + oboeMaker.makeInstrument().name() + "."
+    );
+
+    System.out.println(
+      "An oboist plays that " + oboist.instrumentName() + "."
+    );
+
+    System.out.println(
+      "Behold the " + oboe.play() + " of the " + oboe.name() + "!"
+    );
+
     InstrumentMaker pianoMaker = ac.getBean("pianoMaker", PianoMaker.class);
+    Musician pianist = ac.getBean("pianist", Musician.class);
     Instrument piano = ac.getBean("piano", Piano.class);
 
-    instr = oboeMaker.makeInstrument().getClass().getSimpleName();
-    instr = instr.substring(0, 1).toLowerCase() + instr.substring(1);
-    System.out.println("The oboe-maker makes an " + instr + ".");
-    System.out.println("Behold the " + oboe.play() + " of the " + instr + "!");
+    System.out.println(
+      "The piano-maker makes a " + pianoMaker.makeInstrument().name() + "."
+    );
 
-    instr = pianoMaker.makeInstrument().getClass().getSimpleName();
-    instr = instr.substring(0, 1).toLowerCase() + instr.substring(1);
-    System.out.println("The piano-maker makes a " + instr + ".");
-    System.out.println("Behold the " + piano.play() + " of the " + instr + "!");
+    System.out.println(
+      "A pianist plays that " + pianist.instrumentName() + "."
+    );
+
+    System.out.println(
+      "Behold the " + piano.play() + " of the " + piano.name() + "!"
+    );
   }
 }
