@@ -21,17 +21,11 @@
   <bean id="piano" factory-bean="pianoMaker" factory-method="makeInstrument">
   </bean>
 
-  <bean id="oboist"
-        class="com.eightycolumns.application.Musician"
-        factory-method="create">
-
-    <constructor-arg ref="oboe"/>
+  <bean id="oboist" class="com.eightycolumns.application.Musician">
+    <property name="instrument" ref="oboe"/>
   </bean>
 
-  <bean id="pianist"
-        class="com.eightycolumns.application.Musician"
-        factory-method="create">
-
-    <constructor-arg ref="piano"/>
+  <bean id="pianist" class="com.eightycolumns.application.Musician">
+    <property name="instrument" ref="piano"/>
   </bean>
 </beans>
