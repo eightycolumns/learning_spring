@@ -10,7 +10,7 @@ public class OboeTest {
 
   @Before
   public void setUp() {
-    oboe = new Oboe();
+    oboe = Oboe.create();
   }
 
   @Test

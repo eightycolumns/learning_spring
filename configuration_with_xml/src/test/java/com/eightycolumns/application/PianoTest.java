@@ -10,7 +10,7 @@ public class PianoTest {
 
   @Before
   public void setUp() {
-    piano = new Piano();
+    piano = Piano.create();
   }
 
   @Test
