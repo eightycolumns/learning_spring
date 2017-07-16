@@ -15,7 +15,6 @@ public class OboeTest {
 
   @Test
   public void oboeMakesGloriousSound() {
-    Instrument oboe = new Oboe();
     assertEquals("glorious sound", oboe.play());
   }
 }

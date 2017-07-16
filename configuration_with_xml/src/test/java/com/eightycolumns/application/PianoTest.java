@@ -15,7 +15,6 @@ public class PianoTest {
 
   @Test
   public void pianoMakesGloriousSound() {
-    Instrument piano = new Piano();
     assertEquals("glorious sound", piano.play());
   }
 }
