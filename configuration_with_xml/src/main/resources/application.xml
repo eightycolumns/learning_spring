@@ -5,13 +5,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="oboe"
-        class="com.eightycolumns.application.Oboe"
+  <bean id="oboeMaker"
+        class="com.eightycolumns.application.OboeMaker"
         factory-method="create">
   </bean>
 
-  <bean id="piano"
-        class="com.eightycolumns.application.Piano"
+  <bean id="pianoMaker"
+        class="com.eightycolumns.application.PianoMaker"
         factory-method="create">
+  </bean>
+
+  <bean id="oboe" factory-bean="oboeMaker" factory-method="makeInstrument">
+  </bean>
+
+  <bean id="piano" factory-bean="pianoMaker" factory-method="makeInstrument">
   </bean>
 </beans>
