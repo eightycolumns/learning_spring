@@ -11,8 +11,8 @@ public class MusicianTest {
 
   @Before
   public void setUp() {
-    oboist = new Musician(Oboe.create());
-    pianist = new Musician(Piano.create());
+    oboist = Musician.create(Oboe.create());
+    pianist = Musician.create(Piano.create());
   }
 
   @Test

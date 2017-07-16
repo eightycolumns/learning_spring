@@ -3,8 +3,12 @@ package com.eightycolumns.application;
 public class Musician {
   private Instrument instrument;
 
-  public Musician(Instrument instrument) {
+  private Musician(Instrument instrument) {
     this.instrument = instrument;
+  }
+
+  public static Musician create(Instrument instrument) {
+    return new Musician(instrument);
   }
 
   public String play() {
