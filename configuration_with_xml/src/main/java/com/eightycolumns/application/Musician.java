@@ -5,8 +5,16 @@ public class Musician {
 
   private Musician() {}
 
+  private Musician(Instrument instrument) {
+    this.instrument = instrument;
+  }
+
   public static Musician create() {
     return new Musician();
+  }
+
+  public static Musician create(Instrument instrument) {
+    return new Musician(instrument);
   }
 
   public String instrumentName() {

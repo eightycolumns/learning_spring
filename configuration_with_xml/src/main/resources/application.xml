@@ -34,4 +34,13 @@
       </bean>
     </property>
   </bean>
+
+  <bean id="ensemble" class="com.eightycolumns.application.Ensemble">
+    <constructor-arg>
+      <set>
+        <ref bean="oboist"/>
+        <ref bean="pianist"/>
+      </set>
+    </constructor-arg>
+  </bean>
 </beans>

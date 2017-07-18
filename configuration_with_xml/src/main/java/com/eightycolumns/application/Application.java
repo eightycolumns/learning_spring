@@ -40,5 +40,15 @@ public class Application {
     System.out.println(
       "Behold the " + piano.play() + " of the " + piano.name() + "!"
     );
+
+    Ensemble ensemble = ac.getBean("ensemble", Ensemble.class);
+
+    System.out.println("Ensemble description:");
+
+    ensemble.musicians().forEach((musician) -> System.out.println(
+        "One musician plays the " + musician.instrumentName() + "."
+    ));
+
+    System.out.println("And that's the whole ensemble.");
   }
 }
