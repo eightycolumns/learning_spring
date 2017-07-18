@@ -22,10 +22,14 @@
   </bean>
 
   <bean id="oboist" class="com.eightycolumns.application.Musician">
-    <property name="instrument" ref="oboe"/>
+    <property name="instrument">
+      <ref bean="oboe"/>
+    </property>
   </bean>
 
   <bean id="pianist" class="com.eightycolumns.application.Musician">
-    <property name="instrument" ref="piano"/>
+    <property name="instrument">
+      <ref bean="piano"/>
+    </property>
   </bean>
 </beans>
