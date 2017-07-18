@@ -23,13 +23,15 @@
 
   <bean id="oboist" class="com.eightycolumns.application.Musician">
     <property name="instrument">
-      <ref bean="oboe"/>
+      <bean class="com.eightycolumns.application.Oboe" factory-method="create">
+      </bean>
     </property>
   </bean>
 
   <bean id="pianist" class="com.eightycolumns.application.Musician">
     <property name="instrument">
-      <ref bean="piano"/>
+      <bean class="com.eightycolumns.application.Piano" factory-method="create">
+      </bean>
     </property>
   </bean>
 </beans>
