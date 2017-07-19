@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="oboeMaker"
         class="com.eightycolumns.application.OboeMaker"
-        factory-method="create">
-  </bean>
+        factory-method="create"/>
 
   <bean id="pianoMaker"
         class="com.eightycolumns.application.PianoMaker"
-        factory-method="create">
-  </bean>
+        factory-method="create"/>
 
-  <bean id="oboe" factory-bean="oboeMaker" factory-method="makeInstrument">
-  </bean>
+  <bean id="oboe"
+        factory-bean="oboeMaker"
+        factory-method="makeInstrument"/>
 
-  <bean id="piano" factory-bean="pianoMaker" factory-method="makeInstrument">
-  </bean>
+  <bean id="piano"
+        factory-bean="pianoMaker"
+        factory-method="makeInstrument"/>
 
-  <bean id="oboist" class="com.eightycolumns.application.Musician">
-    <property name="instrument">
-      <bean class="com.eightycolumns.application.Oboe" factory-method="create">
-      </bean>
-    </property>
-  </bean>
+  <bean id="oboist"
+        class="com.eightycolumns.application.Musician"
+        p:instrument-ref="oboe"/>
 
-  <bean id="pianist" class="com.eightycolumns.application.Musician">
-    <property name="instrument">
-      <bean class="com.eightycolumns.application.Piano" factory-method="create">
-      </bean>
-    </property>
-  </bean>
+  <bean id="pianist"
+        class="com.eightycolumns.application.Musician"
+        p:instrument-ref="piano"/>
 
   <bean id="ensemble" class="com.eightycolumns.application.Ensemble">
     <constructor-arg>
