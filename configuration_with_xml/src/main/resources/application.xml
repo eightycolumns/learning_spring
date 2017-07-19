@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -15,20 +16,18 @@
         factory-method="create"/>
 
   <bean id="oboe"
-        factory-bean="oboeMaker"
-        factory-method="makeInstrument"/>
+        class="com.eightycolumns.application.Oboe"/>
 
   <bean id="piano"
-        factory-bean="pianoMaker"
-        factory-method="makeInstrument"/>
+        class="com.eightycolumns.application.Piano"/>
 
   <bean id="oboist"
         class="com.eightycolumns.application.Musician"
-        p:instrument-ref="oboe"/>
+        c:instrument-ref="oboe"/>
 
   <bean id="pianist"
         class="com.eightycolumns.application.Musician"
-        p:instrument-ref="piano"/>
+        c:instrument-ref="piano"/>
 
   <bean id="ensemble" class="com.eightycolumns.application.Ensemble">
     <constructor-arg>

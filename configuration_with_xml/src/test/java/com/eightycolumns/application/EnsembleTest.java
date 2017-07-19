@@ -16,8 +16,8 @@ public class EnsembleTest {
 
   @Before
   public void setUp() {
-    oboist = Musician.create(Oboe.create());
-    pianist = Musician.create(Piano.create());
+    oboist = new Musician(Oboe.create());
+    pianist = new Musician(Piano.create());
     Set<Musician> musicians = new HashSet<>();
     musicians.add(oboist);
     musicians.add(pianist);

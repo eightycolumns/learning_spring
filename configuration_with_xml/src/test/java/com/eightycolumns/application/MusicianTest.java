@@ -11,15 +11,8 @@ public class MusicianTest {
 
   @Before
   public void setUp() {
-    oboist = Musician.create();
-    oboist.setInstrument(Oboe.create());
-    pianist = Musician.create();
-    pianist.setInstrument(Piano.create());
-  }
-
-  @Test(expected=NullPointerException.class)
-  public void musicianWithoutInstrumentCannotPlay() {
-    Musician.create().play();
+    oboist = new Musician(Oboe.create());
+    pianist = new Musician(Piano.create());
   }
 
   @Test
