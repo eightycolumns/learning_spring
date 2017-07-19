@@ -7,6 +7,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="foo" class="com.eightycolumns.application.Foo" depends-on="bar"/>
-  <bean id="bar" class="com.eightycolumns.application.Bar"/>
+  <bean id="classA"
+        class="com.eightycolumns.application.ClassA"
+        depends-on="classB,classC"/>
+
+  <bean id="classB"
+        class="com.eightycolumns.application.ClassB"
+        depends-on="classC"/>
+
+  <bean id="classC"
+        class="com.eightycolumns.application.ClassC"/>
 </beans>

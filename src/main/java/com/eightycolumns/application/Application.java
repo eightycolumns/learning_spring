@@ -9,7 +9,8 @@ public class Application {
       "application.xml"
     );
 
-    Foo foo = ac.getBean("foo", Foo.class);
-    Bar bar = ac.getBean("bar", Bar.class);
+    ClassA classA = ac.getBean("classA", ClassA.class);
+    ClassB classB = ac.getBean("classB", ClassB.class);
+    ClassC classC = ac.getBean("classC", ClassC.class);
   }
 }
