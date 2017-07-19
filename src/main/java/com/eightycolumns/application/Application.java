@@ -9,8 +9,7 @@ public class Application {
       "application.xml"
     );
 
-    ClassA classA = ac.getBean("classA", ClassA.class);
-    ClassB classB = ac.getBean("classB", ClassB.class);
-    ClassC classC = ac.getBean("classC", ClassC.class);
+    LazyBean lazyBean = ac.getBean("lazyBean", LazyBean.class);
+    NonLazyBean nonLazyBean = ac.getBean("nonLazyBean", NonLazyBean.class);
   }
 }
