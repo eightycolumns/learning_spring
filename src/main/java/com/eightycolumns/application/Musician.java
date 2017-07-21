@@ -18,14 +18,12 @@ public class Musician {
     return instrument.play();
   }
 
-  @PostConstruct
   public void init() {
     System.out.println(
       "Initializing musician with instrument " + instrument.name() + "..."
     );
   }
 
-  @PreDestroy
   public void destroy() {
     System.out.println(
       "Destroying musician with instrument " + instrument.name() + "..."
