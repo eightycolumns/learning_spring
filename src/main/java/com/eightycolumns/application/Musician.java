@@ -14,4 +14,16 @@ public class Musician {
   public String play() {
     return instrument.play();
   }
+
+  public void init() {
+    System.out.println(
+      "Initializing musician with instrument " + instrument.name() + "..."
+    );
+  }
+
+  public void destroy() {
+    System.out.println(
+      "Destroying musician with instrument " + instrument.name() + "..."
+    );
+  }
 }

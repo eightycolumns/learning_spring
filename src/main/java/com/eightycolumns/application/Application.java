@@ -1,6 +1,7 @@
 package com.eightycolumns.application;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
@@ -10,21 +11,8 @@ public class Application {
     );
 
     Instrument oboe = ac.getBean("oboe", Oboe.class);
-    Instrument anotherOboe = ac.getBean("oboe", Oboe.class);
+    Musician oboist = ac.getBean("oboist", Musician.class);
 
-    Instrument piano = ac.getBean("piano", Piano.class);
-    Instrument anotherPiano = ac.getBean("piano", Piano.class);
-
-    if (oboe == anotherOboe) {
-      System.out.println("The oboes are identical!");
-    } else {
-      System.out.println("The oboes aren't identical!");
-    }
-
-    if (piano == anotherPiano) {
-      System.out.println("The pianos are identical!");
-    } else {
-      System.out.println("The pianos aren't identical!");
-    }
+    ((ConfigurableApplicationContext)ac).close();
   }
 }
