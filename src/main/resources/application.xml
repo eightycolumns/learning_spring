@@ -6,9 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="animal"
-        class="com.eightycolumns.application.Animal"
-        c:type="parrot"/>
+  <bean id="animal" abstract="true" c:type="parrot"/>
 
   <bean id="boredAnimal"
         class="com.eightycolumns.application.BoredAnimal"

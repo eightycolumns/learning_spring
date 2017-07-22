@@ -9,9 +9,6 @@ public class Application {
       "application.xml"
     );
 
-    Animal animal = ac.getBean("animal", Animal.class);
-    System.out.println(animal.speak());
-
     BoredAnimal boredAnimal = ac.getBean("boredAnimal", BoredAnimal.class);
     System.out.println(boredAnimal.speak());
 
