@@ -10,10 +10,10 @@ public class Application {
     );
 
     BoredAnimal boredAnimal = ac.getBean("boredAnimal", BoredAnimal.class);
-    System.out.println(boredAnimal.speak());
+    boredAnimal.speak();
 
     PartyAnimal partyAnimal = ac.getBean("partyAnimal", PartyAnimal.class);
-    System.out.println(partyAnimal.speak());
+    partyAnimal.speak();
 
     ac.registerShutdownHook();
   }

@@ -7,7 +7,9 @@ public class Animal {
     this.type = type;
   }
 
-  public String speak() {
-    return "I'm just a " + type + ".";
+  public void init() {
+    System.out.println("\n######################");
+    System.out.println("Initializing animal...");
+    System.out.println("######################\n");
   }
 }

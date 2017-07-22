@@ -7,8 +7,19 @@ public class BoredAnimal extends Animal {
     super(type);
   }
 
-  @Override
-  public String speak() {
-    return "I'm a " + description + " " + type + ". I'm so bored...";
+  public void init() {
+    System.out.println("\n############################");
+    System.out.println("Initializing bored animal...");
+    System.out.println("############################\n");
+  }
+
+  public void speak() {
+    System.out.println("\n###################################");
+
+    System.out.println(
+      "I'm a " + description + " " + type + ". I'm so bored..."
+    );
+
+    System.out.println("###################################\n");
   }
 }
