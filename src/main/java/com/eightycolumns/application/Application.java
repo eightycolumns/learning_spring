@@ -9,8 +9,14 @@ public class Application {
       "application.xml"
     );
 
-    Instrument oboe = ac.getBean("oboe", Oboe.class);
-    Musician oboist = ac.getBean("oboist", Musician.class);
+    Animal animal = ac.getBean("animal", Animal.class);
+    System.out.println(animal.speak());
+
+    BoredAnimal boredAnimal = ac.getBean("boredAnimal", BoredAnimal.class);
+    System.out.println(boredAnimal.speak());
+
+    PartyAnimal partyAnimal = ac.getBean("partyAnimal", PartyAnimal.class);
+    System.out.println(partyAnimal.speak());
 
     ac.registerShutdownHook();
   }

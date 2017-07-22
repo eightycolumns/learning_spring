@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans default-init-method="init"
-       default-destroy-method="destroy"
-       xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="oboe"
-        class="com.eightycolumns.application.Oboe"/>
+  <bean id="animal"
+        class="com.eightycolumns.application.Animal"
+        c:type="parrot"/>
 
-  <bean id="oboist"
-        class="com.eightycolumns.application.Musician"
-        c:instrument-ref="oboe"/>
+  <bean id="boredAnimal"
+        class="com.eightycolumns.application.BoredAnimal"
+        parent="animal"/>
+
+  <bean id="partyAnimal"
+        class="com.eightycolumns.application.PartyAnimal"
+        parent="animal"/>
 </beans>
