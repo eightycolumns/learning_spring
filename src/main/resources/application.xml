@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans default-init-method="init"
-       default-destroy-method="destroy"
-       xmlns="http://www.springframework.org/schema/beans"
-       xmlns:c="http://www.springframework.org/schema/c"
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
 
-  <bean class="com.eightycolumns.application.MyBeanPostProcessor"/>
+  <context:annotation-config/>
 
-  <bean id="animal" abstract="true" c:type="parrot"/>
+  <bean id="boredParrot"
+        class="com.eightycolumns.application.Parrot"
+        p:adjective="bored"/>
 
-  <bean id="boredAnimal"
-        class="com.eightycolumns.application.BoredAnimal"
-        parent="animal"/>
+  <bean id="ninjaParrot"
+        class="com.eightycolumns.application.Parrot"
+        p:adjective="ninja"/>
 
-  <bean id="partyAnimal"
-        class="com.eightycolumns.application.PartyAnimal"
-        parent="animal"/>
+  <bean id="partyParrot"
+        class="com.eightycolumns.application.Parrot"
+        p:adjective="party"/>
 </beans>

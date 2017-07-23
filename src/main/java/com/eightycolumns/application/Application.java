@@ -9,11 +9,13 @@ public class Application {
       "application.xml"
     );
 
-    BoredAnimal boredAnimal = ac.getBean("boredAnimal", BoredAnimal.class);
-    boredAnimal.speak();
+    Parrot boredParrot = ac.getBean("boredParrot", Parrot.class);
+    Parrot ninjaParrot = ac.getBean("ninjaParrot", Parrot.class);
+    Parrot partyParrot = ac.getBean("partyParrot", Parrot.class);
 
-    PartyAnimal partyAnimal = ac.getBean("partyAnimal", PartyAnimal.class);
-    partyAnimal.speak();
+    boredParrot.speak();
+    ninjaParrot.speak();
+    partyParrot.speak();
 
     ac.registerShutdownHook();
   }
