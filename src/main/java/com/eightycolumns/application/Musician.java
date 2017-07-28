@@ -7,11 +7,11 @@ public class Musician {
 
   public Musician() {}
 
-  @Autowired
   public Musician(Instrument instrument) {
     this.instrument = instrument;
   }
 
+  @Autowired
   public void setInstrument(Instrument instrument) {
     this.instrument = instrument;
   }
