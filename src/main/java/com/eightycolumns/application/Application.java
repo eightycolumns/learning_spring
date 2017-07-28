@@ -5,18 +5,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
   public static void main(String[] args) {
-    ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext(
+    ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(
       "application.xml"
     );
 
-    Parrot boredParrot = ac.getBean("boredParrot", Parrot.class);
-    Parrot ninjaParrot = ac.getBean("ninjaParrot", Parrot.class);
-    Parrot partyParrot = ac.getBean("partyParrot", Parrot.class);
+    Instrument oboe = (Instrument)context.getBean("oboe");
+    Musician oboist = (Musician)context.getBean("oboist");
 
-    boredParrot.speak();
-    ninjaParrot.speak();
-    partyParrot.speak();
-
-    ac.registerShutdownHook();
+    oboe.play();
+    oboist.instrument().play();
   }
 }
